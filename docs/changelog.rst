@@ -70,9 +70,8 @@ Bug fixes
 - Improved error message when the database cannot be opened. When SQLite reports
   an ``unable to open`` error, beets now suggests checking that the file or
   parent directory is writable. The original SQLite error is preserved for
-  debugging. Also increased the default SQLite busy timeout from 5 s to 30 s to
-  reduce ``database is locked`` errors during concurrent access, and fixed the
-  ``cannot not`` typo in the generic database error message. :bug:`1676`
+  debugging, and the ``cannot not`` typo in the generic database error message
+  is fixed. :bug:`1676`
 
 For plugin developers
 ~~~~~~~~~~~~~~~~~~~~~
