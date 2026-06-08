@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "beets"
-version = "2.8.0"
+version = "2.11.0"
 description = "music tagger and library organizer"
 authors = ["Adrian Sampson <adrian@radbox.org>"]
 maintainers = ["Serene-Arc"]
@@ -47,7 +47,7 @@ colorama = { version = "*", markers = "sys_platform == 'win32'" }
 confuse = ">=2.2.0"
 jellyfish = "*"
 lap = ">=0.5.12"
-mediafile = ">=0.16.0"
+mediafile = ">=0.17.0"
 numpy = [
     { python = "<3.13", version = ">=2.0.2" },
     { python = ">=3.13", version = ">=2.3.4" },
@@ -174,6 +174,7 @@ replaygain = [
 ] # python-gi and GStreamer 1.0+ or mp3gain/aacgain or Python Audio Tools or ffmpeg
 scrub = ["mutagen"]
 sonosupdate = ["soco"]
+tidal = ["requests-oauthlib"]
 titlecase = ["titlecase"]
 thumbnails = ["Pillow", "pyxdg"]
 web = ["flask", "flask-cors"]
@@ -302,6 +303,9 @@ extend-exclude = [
 [tool.ruff]
 target-version = "py310"
 line-length = 80
+
+[tool.ruff.format]
+skip-magic-trailing-comma = true
 
 [tool.ruff.lint]
 future-annotations = true

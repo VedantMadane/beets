@@ -23,6 +23,7 @@ from random import random
 from unittest import mock
 
 from beets import config, library, ui
+from beets.exceptions import UserError
 from beets.test import _common
 from beets.test.helper import BeetsTestCase, IOMixin
 
@@ -113,7 +114,7 @@ class ParentalDirCreation(IOMixin, BeetsTestCase):
         self.io.addinput("n")
         try:
             lib = ui._open_library(test_config)
-        except ui.UserError:
+        except UserError:
             if os.path.exists(non_exist_path_parent):
                 shutil.rmtree(non_exist_path_parent)
                 raise OSError("Parent directories should not be created.")
